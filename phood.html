@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+  overflow: hidden;
+}
+
+h1 {
+    background-color: #f9b294;
+    margin: 0em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #6b5c7b;
+  color: #f8b195;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #c06c84;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: #f8b195;
+  background-color: #355e7e;
+  display: none;
+  padding: 70px 20px 100px 20px;
+  height: 100%;
+}
+
+</style>
+</head>
+<body>
+
+    <h1>Phood Phor People</h1>
+    <button class="tablink" onclick="openPage('Lanogi', this)" id="defaultOpen">Lanogi</button>
+    <button class="tablink" onclick="openPage('Buddies', this)">Buddies</button>
+    <button class="tablink" onclick="openPage('Astra', this)">Astra</button>
+    <button class="tablink" onclick="openPage('Foodoo', this)">Phoodoo</button>
+
+    <div id="Lanogi" class="tabcontent">
+        <iframe src="https://www.lanogi.sk/denne-menu/" width="100%" height="100%"></iframe>
+    </div>
+
+    <div id="Buddies" class="tabcontent">
+        <iframe src="http://buddies.sk/denne-menu/" width="100%" height="100%"></iframe>
+    </div>
+
+    <div id="Astra" class="tabcontent">
+        <iframe src="https://restauracie.sme.sk/restauracia/astra_153-ruzinov_2980/denne-menu" width="100%" height="100%"></iframe>
+    </div>
+
+    <div id="Foodoo" class="tabcontent">
+        <iframe src="https://restauracie.sme.sk/restauracia/foodoo-bistro-v-bratislave_9547-stare-mesto_2949/denne-menu" width="100%" height="100%"></iframe>
+    </div>
+
+    <script>
+        function openPage(pageName,elmnt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            document.getElementById(pageName).style.display = "block";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
